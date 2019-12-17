@@ -17,9 +17,10 @@ public class App
     {
         System.out.println( "RMI Client started!" );
 
+		String serverHost = System.getProperty("app.rmi.server.name", "localhost");
+		int serverPort = Integer.parseInt(System.getProperty("app.rmi.server.port", "1099"));
+
         String name = "rmi.service.DemoService";
-        String serverHost = "vmcentos";
-        int serverPort = 1099;
 
         Registry registry = LocateRegistry.getRegistry(serverHost, serverPort);
         DemoService service = (DemoService) registry.lookup(name);
