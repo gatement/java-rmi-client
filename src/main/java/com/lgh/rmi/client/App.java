@@ -18,7 +18,7 @@ public class App
         System.out.println( "RMI Client started!" );
 
         String name = "rmi.service.DemoService";
-        String serverHost = "vmcentos01";
+        String serverHost = "vmcentos";
         int serverPort = 1099;
 
         Registry registry = LocateRegistry.getRegistry(serverHost, serverPort);
@@ -30,5 +30,7 @@ public class App
         }
 
         System.out.println(service.sayHello());
+        System.out.println(service.add(1.2, 2.5)); // 3.7
+        System.out.println(service.subtract(8.2, 7.9)); // 0.3
     }
 }

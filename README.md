@@ -1,5 +1,5 @@
 # compile
-./mvnw clean compile
+./mvnw clean package
 
 # run
-java -cp target/classes com.lgh.rmi.client.App
+java -jar target/rmi.client.jar
